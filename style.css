@@ -164,18 +164,29 @@ body{
 .text1 {
     color: #ffffff;
 }
-.img1 img{
+.img1 {
     position: relative;
-    width: 450px;
-    z-index: 10;
+    width: 100%;
+    max-width: 450px;
 }
+
+.img1 img {
+    width: 100%;
+    height: auto;
+    display: block;
+    z-index: 10;
+    position: relative;
+}
+
 .img1 video {
     position: absolute;
-    top:190px;
-    width: 370px;
-    right: 18px;
-    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
 }
+
 .text1 {
     display: flex;
     flex-direction: column;
@@ -191,19 +202,28 @@ body{
     font-family: sans-serif;
     font-weight: 450;
 }
-.img2 img {
+.img2 {
     position: relative;
-    width: 500px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.img2 img {
+    width: 100%;
+    display: block;
+    position: relative;
     z-index: 10;
 }
+
 .img2 video {
     position: absolute;
-    height: 230px;
-    top:107px;
-    width: 300px;
-    right: 95px;
-    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
 }
+
 .feq {
     color: #ffffff;
     text-align: center;
@@ -264,3 +284,42 @@ p {
 button:hover{
    cursor: pointer;
 }
+@media screen and (max-width: 768px) {
+    .nav {
+      flex-direction: column;
+      gap: 10px;
+    }
+    .mid > :first-child {
+      font-size: 32px;
+    }
+    .mid > :nth-child(2),
+    .mid > :nth-child(3) {
+      font-size: 18px;
+    }
+    .data {
+      flex-direction: column;
+    }
+    .data input,
+    .data button {
+      width: 90%;
+    }
+    .sec {
+      flex-direction: column;
+      height: auto;
+      padding: 20px 0;
+    }
+    .img1 img,
+    .img2 img,
+    .img1 video,
+    .img2 video {
+      width: 100%;
+      height: auto;
+      position: static;
+    }
+    footer {
+      flex-direction: column;
+      gap: 30px;
+      padding-top: 40px;
+    }
+  }
+  
